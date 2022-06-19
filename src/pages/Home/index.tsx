@@ -113,8 +113,8 @@ const Index = observer(() => {
       <ImageModal url={url} />
       <CustomAlertDialog
         uid={id}
-        title={'是否需要删除图片'}
-        list={['确定']}
+        title={'如果不是自己的作品，删除前请三思而后行？'}
+        list={['确认删除']}
         closeModal={closeModal}
         updateRender={onRefresh}
       />

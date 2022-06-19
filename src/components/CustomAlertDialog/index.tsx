@@ -44,7 +44,7 @@ const CustomAlertDialog: FC<Props> = observer(
             toast(res.msg);
           }}
           style={styles.item}>
-          <Text style={styles.commonFontSize}>{item}</Text>
+          <Text style={styles.itemText}>{item}</Text>
         </TouchableOpacity>
       );
     };
@@ -58,7 +58,7 @@ const CustomAlertDialog: FC<Props> = observer(
                 onPress={() => {
                   isVisible.setIsVisible(true);
                 }}
-                style={[styles.titleText, styles.commonFontSize]}>
+                style={[styles.titleText]}>
                 {data.title}
               </Text>
             </View>
@@ -75,7 +75,7 @@ const CustomAlertDialog: FC<Props> = observer(
 
     return (
       <View>
-        <View style={{flex: 1}}>
+        <View style={styles.container}>
           <Modal
             transparent={true}
             visible={isVisible.isVisible}
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   commonFontSize: {
-    fontSize: 25,
+    fontSize: 20,
   },
   modalStyle: {
     position: 'absolute',
@@ -110,9 +110,9 @@ const styles = StyleSheet.create({
     width: width,
     flex: 1,
     flexDirection: 'column',
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    backgroundColor: '#eee',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    backgroundColor: '#FFFAFA',
   },
   optArea: {
     flexDirection: 'column',
@@ -120,11 +120,12 @@ const styles = StyleSheet.create({
   titleWrap: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.5,
     borderColor: '#dcdcdc',
   },
   titleText: {
-    paddingVertical: 10,
+    fontSize: 15,
+    paddingVertical: 20,
     color: '#a9a9a9',
   },
   item: {
@@ -133,11 +134,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#dcdcdc',
+    borderBottomWidth: 6,
+    borderColor: '#eee',
   },
   itemText: {
-    fontSize: 25,
+    fontSize: 20,
+    color: '#FF0000',
   },
   cancelWrap: {
     height: 100,
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   cancelText: {
-    paddingVertical: 10,
-    color: '#f08080',
+    paddingVertical: 15,
+    color: '#000',
   },
 });
